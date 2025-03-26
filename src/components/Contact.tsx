@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useContentItem } from '@/contexts/ContentContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { toast } from "@/components/ui/sonner";
+import { toast } from "@/lib/toast";
 
 export const Contact: React.FC = () => {
   const { item: titleItem, isLoading: titleLoading } = useContentItem('contactTitle');

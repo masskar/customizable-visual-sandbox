@@ -22,7 +22,7 @@ import {
   TabsList, 
   TabsTrigger 
 } from '@/components/ui/tabs';
-import { toast } from "@/components/ui/sonner";
+import { toast } from "@/lib/toast";
 import { Loader2, Save, RefreshCw } from 'lucide-react';
 
 export const ContentEditor: React.FC = () => {
