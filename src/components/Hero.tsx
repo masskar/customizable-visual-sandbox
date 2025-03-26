@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
   
   const isLoading = titleLoading || subtitleLoading || imageLoading;
   
-  const title = titleItem?.value || 'Hello, I'm a Designer & Developer';
+  const title = titleItem?.value || "Hello, I'm a Designer & Developer";
   const subtitle = subtitleItem?.value || 'Crafting digital experiences with elegance and purpose';
   const image = imageItem?.value || '/placeholder.svg';
   

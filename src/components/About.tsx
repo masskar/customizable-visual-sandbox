@@ -11,7 +11,7 @@ export const About: React.FC = () => {
   const isLoading = titleLoading || descriptionLoading || imageLoading;
   
   const title = titleItem?.value || 'About Me';
-  const description = descriptionItem?.value || 'I'm a passionate designer and developer with over 5 years of experience creating beautiful, functional interfaces.';
+  const description = descriptionItem?.value || "I'm a passionate designer and developer with over 5 years of experience creating beautiful, functional interfaces.";
   const image = imageItem?.value || '/placeholder.svg';
   
   return (

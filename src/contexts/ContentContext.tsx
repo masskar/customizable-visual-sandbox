@@ -29,7 +29,7 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 // Default content as fallback
 const defaultContent: ContentSections = {
   hero: [
-    { id: '1', key: 'heroTitle', type: 'text', value: 'Hello, I'm a Designer & Developer', label: 'Hero Title', section: 'hero' },
+    { id: '1', key: 'heroTitle', type: 'text', value: "Hello, I'm a Designer & Developer", label: 'Hero Title', section: 'hero' },
     { id: '2', key: 'heroSubtitle', type: 'text', value: 'Crafting digital experiences with elegance and purpose', label: 'Hero Subtitle', section: 'hero' },
     { id: '3', key: 'heroImage', type: 'image', value: '/placeholder.svg', label: 'Hero Image', section: 'hero' },
   ],
