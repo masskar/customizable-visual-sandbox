@@ -4,17 +4,16 @@ import { motion } from 'framer-motion';
 import { useContentItem } from '@/contexts/ContentContext';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import VSCodeAnimation from '@/components/VSCodeAnimation';
 
 export const Hero: React.FC = () => {
   const { item: titleItem, isLoading: titleLoading } = useContentItem('heroTitle');
   const { item: subtitleItem, isLoading: subtitleLoading } = useContentItem('heroSubtitle');
-  const { item: imageItem, isLoading: imageLoading } = useContentItem('heroImage');
   
-  const isLoading = titleLoading || subtitleLoading || imageLoading;
+  const isLoading = titleLoading || subtitleLoading;
   
   const title = titleItem?.value || "Hello, I'm a Designer & Developer";
   const subtitle = subtitleItem?.value || 'Crafting digital experiences with elegance and purpose';
-  const image = imageItem?.value || '/placeholder.svg';
   
   return (
     <section id="home" className="pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
@@ -66,22 +65,14 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
           
-          {/* Image */}
+          {/* VS Code Animation */}
           <motion.div 
             className="order-1 md:order-2"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            {isLoading ? (
-              <div className="h-64 md:h-80 lg:h-96 w-full bg-gray-100 animate-pulse rounded-2xl"></div>
-            ) : (
-              <img 
-                src={image} 
-                alt="Hero" 
-                className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
-              />
-            )}
+            <VSCodeAnimation />
           </motion.div>
         </div>
       </div>

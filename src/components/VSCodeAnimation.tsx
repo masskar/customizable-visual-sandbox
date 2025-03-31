@@ -1,7 +1,7 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, RoundedBox, Text, useTexture } from '@react-three/drei';
+import { OrbitControls, RoundedBox, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 const VSCodeWindow = () => {
@@ -157,19 +157,21 @@ const VSCodeWindow = () => {
 const VSCodeAnimation: React.FC = () => {
   return (
     <div className="w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
-      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} />
-        <VSCodeWindow />
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          rotateSpeed={0.5}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-      </Canvas>
+      <Suspense fallback={<div className="w-full h-full bg-gray-100 animate-pulse rounded-2xl"></div>}>
+        <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+          <ambientLight intensity={0.5} />
+          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} />
+          <VSCodeWindow />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            rotateSpeed={0.5}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+        </Canvas>
+      </Suspense>
     </div>
   );
 };
