@@ -72,7 +72,9 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <VSCodeAnimation />
+            <Suspense fallback={<div className="w-full h-64 md:h-80 lg:h-96 bg-gray-100 animate-pulse rounded-2xl"></div>}>
+              <VSCodeAnimation />
+            </Suspense>
           </motion.div>
         </div>
       </div>
