@@ -35,18 +35,21 @@ const AnimatedRoutes = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+// Convert App to a function component with a body
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
       <ContentProvider>
-        <Toaster />
-        <Sonner />
         <BrowserRouter>
-          <AnimatedRoutes />
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <AnimatedRoutes />
+          </TooltipProvider>
         </BrowserRouter>
       </ContentProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+}
 
 export default App;
