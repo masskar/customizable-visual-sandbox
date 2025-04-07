@@ -1,5 +1,5 @@
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useContentItem } from '@/contexts/ContentContext';
 import { Button } from '@/components/ui/button';
